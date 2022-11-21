@@ -196,7 +196,7 @@ def prdict_heart_disease(list_data):
     csv_file = Admin_Helath_CSV.objects.get(id=1)
     df = pd.read_csv(csv_file.csv_file)
 
-    X = df[['Age','Sex','BPM_mean','SPO2_mean']]
+    X = df[['age','sex','BPM_mean','SPO2_mean']]
     y = df['Condition']
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=0)
     nn_model = GradientBoostingClassifier(n_estimators=100,learning_rate=1.0,max_depth=1, random_state=0)
