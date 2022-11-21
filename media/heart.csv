@@ -1,4 +1,4 @@
-age,sex,BPM_mean,SPO2_mean
+Age,Sex,Heart Rate,SPo2
 63,1,86.98,92.68
 37,1,78.05,97.32
 41,0,84.05,96.83
