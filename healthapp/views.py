@@ -251,9 +251,9 @@ def add_heartdetail(request):
         rem = int(pred[0])
         print("Result = ",rem)
         if pred[0] == 1:
-            pred = "<span style='color:green'>You are healthy</span>"
+            pred = "<span style='color:red'>You are Unhealthy , Need to Checkup .</span>"
         else:
-            pred = "<span style='color:red'>You are Unhealthy, Need to Checkup.</span>"
+            pred = "<span style='color:green'>You are healthy.</span>"
         return redirect('predict_desease', str(rem), str(round(accuracy,2)))
     return render(request, 'add_heartdetail.html')
 
