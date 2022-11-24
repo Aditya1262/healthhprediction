@@ -250,7 +250,7 @@ def add_heartdetail(request):
         Search_Data.objects.create(patient=patient, prediction_accuracy=round(accuracy,2)  , result=pred[0], values_list=list_data,predict_for="Heart Prediction")
         rem = int(pred[0])
         print("Result = ",rem)
-        if pred[0] == 1:
+        if pred[0] == 0:
             pred = "<span style='color:red'>You are Unhealthy , Need to Checkup .</span>"
         else:
             pred = "<span style='color:green'>You are healthy.</span>"
