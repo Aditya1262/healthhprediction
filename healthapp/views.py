@@ -228,7 +228,7 @@ def add_doctor(request,pid=None):
 @login_required(login_url="login")
 def add_heartdetail(request):
     if request.method == "POST":
-        # list_data = [57, 0, 1, 130, 236, 0, 0, 174, 0, 0.0, 1, 1, 2]
+        # list_data = [63, 1, 86.98,92.68,0]
         list_data = []
         value_dict = eval(str(request.POST)[12:-1])
         count = 0
@@ -244,7 +244,7 @@ def add_heartdetail(request):
                 continue
             list_data.append(value[0])
 
-        # list_data = [57, 0, 1, 130, 236, 0, 0, 174, 0, 0.0, 1, 1, 2]
+        # list_data = [63, 1, 86.98,92.68,0]
         accuracy,pred = prdict_heart_disease(list_data)
         patient = Patient.objects.get(user=request.user)
         Search_Data.objects.create(patient=patient, prediction_accuracy=round(accuracy,2)  , result=pred[0], values_list=list_data,predict_for="Heart Prediction")
